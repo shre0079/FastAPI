@@ -1,9 +1,9 @@
 from typing import List
-from uuid import uuid4
+from uuid import UUID, uuid4
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 
-from models import Gender, Role, User
+from models import Gender, Role, User, UserUpdateRequest
 
 app=FastAPI()
 
@@ -17,7 +17,7 @@ async def root():
     return {"Hello":"Shreyash"}
 
 @app.get("/ping")
-async def root():
+async def root(): 
     return {"pong"} 
 
 @app.get("/api/v1/users")
