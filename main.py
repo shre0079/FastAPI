@@ -40,6 +40,7 @@ async def delete_user(user_id: UUID):
         detail=f"user with id: {user_id} does not exist"
     )
 
+
 @app.put("/api/v1/users/{user_id}")
 async def update_user(user_update: UserUpdateRequest, user_id: UUID):
     for user in db:
