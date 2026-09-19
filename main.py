@@ -3,9 +3,9 @@ from fastapi import FastAPI
 app=FastAPI()
 
 @app.get("/")
-def root():
+async def root():
     return {"Hello":"Shreyash"}
 
 @app.get("/ping")
-def root():
-    return {"pong"}
+async def root():
+    return {"pong"} 
